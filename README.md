@@ -49,5 +49,3 @@ A Makefile (http://www.gnu.org/software/make/manual/make.html) is provided for t
 `make test` runs the unit tests for this assignment.  All tests should pass once you have completed the assignment.
 
 `make solution.zip` will produce the zip file that you must submit as your solution for this assignment.
-
-testing :)
