@@ -207,17 +207,16 @@ class FunctionAppExpr implements Expression {
     public Value evaluate(Environment env) 
     {
         Environment newEnv = new Environment();
-        List <Value> evalTo = new ArrayList<Value>();
+        
+        List <Value> evalTo = new ArrayList <Value>();
         List <String> evalToString = new ArrayList <String>();
         for (int i = 0; i < args.size(); i++)
         {
-        	evalTo.set(i, args.get(i).evaluate(env));
-        	evalToString.set(i, evalTo.get(i).toString());
+        	evalTo.add(args.get(i).evaluate(env));
+        	evalToString.add(evalTo.get(i).toString());
         }
         ClosureVal want = new ClosureVal(evalToString, this, newEnv);
-        want.apply(evalTo);
         
-        return want;
+        return want.apply(evalTo);
     }
 }
-
