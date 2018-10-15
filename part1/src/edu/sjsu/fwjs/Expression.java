@@ -124,8 +124,14 @@ class SeqExpr implements Expression {
         this.e2 = e2;
     }
     public Value evaluate(Environment env) {
-        // YOUR CODE HERE
-        return null;
+        e1.evaluate(env);
+        Value v2 = e2.evaluate(env); 
+        return v2; //because of implicit return
+        /*
+         * TODO: Verify that this actually works.
+         * The relevant JUnit test depends on AssignExpr and BinOpExpr, 
+         * so I can't verify if this does anything meaningful yet.
+         */
     }
 }
 
