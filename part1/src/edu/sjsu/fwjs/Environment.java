@@ -31,7 +31,7 @@ public class Environment {
 			return env.get(varName);
 		else {
 			if (outerEnv == null) {
-				return null;
+				return new NullVal();
 			} else {
 				return outerEnv.resolveVar(varName);
 			}
@@ -47,7 +47,7 @@ public class Environment {
 		Value oldVal = this.resolveVar(key);
 
 		// if the oldVal is null, then variable has not been defined in any scope
-		if (oldVal == null) {
+		if (new NullVal().equals(oldVal)) {
 			Environment e = this;
 			// loop until e becomes the global scope
 			while (e.outerEnv != null) {
