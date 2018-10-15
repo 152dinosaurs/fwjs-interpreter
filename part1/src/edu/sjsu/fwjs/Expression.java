@@ -7,7 +7,9 @@ import java.util.List;
  * FWJS expressions.
  */
 public interface Expression {
-    /**
+    int value = 0;
+
+	/**
      * Evaluate the expression in the context of the specified environment.
      */
     public Value evaluate(Environment env);
@@ -72,9 +74,34 @@ class BinOpExpr implements Expression {
 
     @SuppressWarnings("incomplete-switch")
     public Value evaluate(Environment env) {
-        // Hello, Andrea is Working here :)
-    	//Testing Slack
-        return null;
+    	
+    	IntVal num1 = (IntVal)e1.evaluate(env);
+    	IntVal num2 = (IntVal)e2.evaluate(env);
+    	
+        if(op == op.ADD){
+        	return new IntVal (num1.toInt() + num2.toInt());     	
+		}else if (op == op.SUBTRACT){
+        	return new IntVal (num1.toInt() - num2.toInt());
+		}else if (op == op.MULTIPLY){
+			return new IntVal (num1.toInt() * num2.toInt());
+		}else if (op == op.DIVIDE){
+			return new IntVal (num1.toInt() / num2.toInt());
+		}else if (op == op.MOD){
+			return new IntVal (num1.toInt() % num2.toInt());
+		}else if (op == op.GT){
+			return new BoolVal (num1.toInt() > num2.toInt());
+		}else if (op == op.GE){
+			return new BoolVal (num1.toInt() >= num2.toInt());
+		}else if (op == op.LT){
+			return new BoolVal (num1.toInt() < num2.toInt());
+		}else if (op == op.LE){
+			return new BoolVal (num1.toInt() <= num2.toInt());
+		}else if (op == op.EQ){
+			return new BoolVal (num1.equals(num2));
+		}else{
+			return null;
+		}
+
     }
 }
 
@@ -92,8 +119,15 @@ class IfExpr implements Expression {
         this.els = els;
     }
     public Value evaluate(Environment env) {
-        // YOUR CODE HERE
-        return null;
+        
+    	BoolVal check = (BoolVal) cond.evaluate(env); 
+    	if (check.toBoolean())
+    	{
+    		return thn.evaluate(env);
+    	}else 
+    	{
+    		return els.evaluate(env);
+    	}
     }
 }
 
@@ -108,8 +142,15 @@ class WhileExpr implements Expression {
         this.body = body;
     }
     public Value evaluate(Environment env) {
-        // YOUR CODE HERE
-        return null;
+    	BoolVal check = (BoolVal) cond.evaluate(env);
+    	Value result = null;
+    	
+    	while (check.toBoolean())
+    	{
+    		result = body.evaluate(env);
+    	}
+    	
+    	return result;
     }
 }
 
