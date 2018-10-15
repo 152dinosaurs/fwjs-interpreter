@@ -44,7 +44,21 @@ public class Environment {
      * or any of the function's outer scopes, the var is stored in the global scope.
      */
     public void updateVar(String key, Value v) {
-        // YOUR CODE HERE
+        Value oldVal = this.resolveVar(key);
+        
+        // if the oldVal is null, then variable has not been defined in any scope
+        if(oldVal == null) {
+        	Environment e = this;
+        	//loop until e becomes the global scope
+        	while(e.outerEnv != null) {
+        		e = e.outerEnv;
+        	}
+        	e.createVar(key, v);
+        }
+        else 
+        	oldVal = v;
+        
+        
     }
 
     /**
@@ -53,6 +67,10 @@ public class Environment {
      * a RuntimeException is thrown.
      */
     public void createVar(String key, Value v) {
-        // YOUR CODE HERE
+        if(env.containsKey(key))
+        	throw new RuntimeException("Variable already defined in current scope");
+        else
+        	env.put(key, v);
+        
     }
 }
