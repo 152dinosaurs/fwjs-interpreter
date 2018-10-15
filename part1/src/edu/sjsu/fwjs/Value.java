@@ -1,5 +1,6 @@
 package edu.sjsu.fwjs;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -90,8 +91,21 @@ class ClosureVal implements Value {
      * of the environment where the function was created. Each parameter should
      * be bound to its matching argument and added to the new local environment.
      */
-    public Value apply(List<Value> argVals) {
-        // YOUR CODE HERE
-        return null;
+    public Value apply(List<Value> argVals) 
+    {
+    	Environment newLocal = new Environment(outerEnv);
+    	
+    	List <String> valueAsString = new ArrayList <String>();
+    	for (int i = 0; i < argVals.size(); i++)
+    	{ 
+    		valueAsString.add(argVals.get(i).toString());
+    	}
+    	
+    	for (int k = 0; k < argVals.size(); k++)
+    	{
+    		newLocal.createVar(valueAsString.get(k), argVals.get(k));
+    	}
+    	
+        return this;
     }
 }
