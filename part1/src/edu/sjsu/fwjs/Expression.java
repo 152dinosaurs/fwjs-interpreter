@@ -188,8 +188,9 @@ class FunctionDeclExpr implements Expression {
         this.body = body;
     }
     public Value evaluate(Environment env) {
-        // YOUR CODE HERE
-        return null;
+    	body.evaluate(env);
+        ClosureVal closure = new ClosureVal(params, body, env);
+        return closure;
     }
 }
 
