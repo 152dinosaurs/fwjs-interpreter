@@ -148,6 +148,7 @@ class WhileExpr implements Expression {
     	while (check.toBoolean())
     	{
     		result = body.evaluate(env);
+    		check = ((BoolVal) cond.evaluate(env));
     	}
     	
     	return result;
