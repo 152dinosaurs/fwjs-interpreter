@@ -146,8 +146,9 @@ class VarDeclExpr implements Expression {
         this.exp = exp;
     }
     public Value evaluate(Environment env) {
-        // YOUR CODE HERE
-        return null;
+        Value v = exp.evaluate(env);
+        env.createVar(varName, v);
+        return v;
     }
 }
 
@@ -164,8 +165,15 @@ class AssignExpr implements Expression {
         this.e = e;
     }
     public Value evaluate(Environment env) {
-        // YOUR CODE HERE
-        return null;
+    	Value v = e.evaluate(env);
+    	
+    	/*
+    	 * due to the implementation of updateVar, this will do the
+    	 * right thing regardless if the variable has been set already.
+    	 * See comment on Environment.updateVar() for more info.
+    	 */
+        env.updateVar(varName, v);
+        return v;
     }
 }
 
