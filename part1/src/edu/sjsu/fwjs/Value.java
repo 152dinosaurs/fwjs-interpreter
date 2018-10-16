@@ -93,23 +93,12 @@ class ClosureVal implements Value {
      */
     public Value apply(List<Value> argVals) 
     {
-    	//created a new local environment with this closureVal's 
-    	//outer environment as the parameter in the new local environment 
     	Environment newLocal = new Environment(outerEnv);
-    	
-    	//made argVals into strings
-    	List <String> valueAsString = new ArrayList <String>();
-    	
     	for (int i = 0; i < argVals.size(); i++)
-    	{ 
-    		valueAsString.add(argVals.get(i).toString());
+    	{
+    		newLocal.createVar(params.get(i), argVals.get(i));
     	}
     	
-    	//took them both and added them to the environment
-    	for (int k = 0; k < argVals.size(); k++)
-    	{
-    		newLocal.createVar(valueAsString.get(k), argVals.get(k));
-    	}
-        return this;
+    	return body.evaluate(newLocal);
     }
 }

@@ -257,7 +257,7 @@ class FunctionAppExpr implements Expression {
         	evalTo.add(args.get(i).evaluate(env));
         	evalToString.add(evalTo.get(i).toString());
         }
-        ClosureVal want = new ClosureVal(evalToString, this, newEnv);
+        ClosureVal want = new ClosureVal(evalToString, f, newEnv);
         
         return want.apply(evalTo);
     }
