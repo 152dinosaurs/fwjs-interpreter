@@ -142,13 +142,12 @@ class WhileExpr implements Expression {
         this.body = body;
     }
     public Value evaluate(Environment env) {
-    	BoolVal check = (BoolVal) cond.evaluate(env);
-    	Value result = null;
+    	Value result = new NullVal();
     	
-    	while (check.toBoolean())
+    	while (((BoolVal)cond.evaluate(env)).toBoolean())
     	{
     		result = body.evaluate(env);
-    		check = ((BoolVal) cond.evaluate(env));
+ 
     	}
     	
     	return result;
