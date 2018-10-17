@@ -55,7 +55,21 @@ public class Environment {
 			}
 			e.createVar(key, v);
 		} else
-			oldVal = v;
+			updateEnvValue(key, v);
+	}
+	
+	/**
+	 * Helper function for updateVar which updates a value in the environment.
+	 * This function assumes that a variable with varName already exists in
+	 * one of the environments.
+	 * @param varName the variable name to search for in the environments
+	 * @param newVal the new value for the variable
+	 */
+	private void updateEnvValue(String varName, Value newVal) {
+		if (env.containsKey(varName))
+			env.put(varName, newVal);
+		else
+			outerEnv.updateEnvValue(varName, newVal);
 	}
 
     /**
