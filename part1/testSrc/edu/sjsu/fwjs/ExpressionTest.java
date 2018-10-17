@@ -96,15 +96,10 @@ public class ExpressionTest {
                         new ValueExpr(new IntVal(3))));
         assertEquals(se.evaluate(env), new IntVal(6));
     }
-<<<<<<< HEAD
+
    /* 
     @Test (timeout = 1000 * 30)  // 30 seconds 
     public void testWhileExpr() throws Exception{
-=======
-    
-    /*@Test
-    public void testWhileExpr() {
->>>>>>> origin/master
         Environment env = new Environment();
         env.updateVar("x", new IntVal(10));
         WhileExpr we = new WhileExpr(new BinOpExpr(Op.GT,
@@ -116,7 +111,7 @@ public class ExpressionTest {
                                 new ValueExpr(new IntVal(1)))));
         we.evaluate(env);
         assertEquals(new IntVal(0), env.resolveVar("x"));
-<<<<<<< HEAD
+
     }
     */
     @Test (timeout = 1000 * 10)  // 10 seconds 
@@ -133,9 +128,7 @@ public class ExpressionTest {
         we.evaluate(env);
         assertEquals(new IntVal(2), env.resolveVar("x"));
     }
-=======
-    }*/
->>>>>>> origin/master
+
     
     @Test
     // (function(x) { x; })(321);
