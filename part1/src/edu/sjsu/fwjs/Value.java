@@ -90,15 +90,15 @@ class ClosureVal implements Value {
      * To apply a closure, first create a new local environment, with an outer scope
      * of the environment where the function was created. Each parameter should
      * be bound to its matching argument and added to the new local environment.
+     * HAVE PARAMS STRING AND BODY EXPRESSION AND OUTERENV ENVIRONMENT
      */
     public Value apply(List<Value> argVals) 
     {
     	Environment newLocal = new Environment(outerEnv);
     	for (int i = 0; i < argVals.size(); i++)
     	{
-    		newLocal.createVar(params.get(i), argVals.get(i));
+    		newLocal.updateVar(params.get(i), argVals.get(i));
     	}
-    	
     	return body.evaluate(newLocal);
     }
 }

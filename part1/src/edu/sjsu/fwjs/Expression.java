@@ -237,6 +237,14 @@ class FunctionDeclExpr implements Expression {
 
 /**
  * Function application.
+ * FunctionAppExpr takes an expression 
+ * (which should evaluate to a closure) 
+ * and a list of arguments.  When evaluated, 
+ * the environment is ignored.  Instead a new environment 
+ * is created including all of the parameters with the 
+ * arguments bound to the parameter names.  Note that you 
+ * will need to evaluate each argument to a value before 
+ * the closure.apply method can be used.
  */
 class FunctionAppExpr implements Expression {
     private Expression f;
@@ -255,6 +263,7 @@ class FunctionAppExpr implements Expression {
         {
         	evalTo.add(args.get(i).evaluate(env));
         	evalToString.add(evalTo.get(i).toString());
+        	newEnv.updateVar(evalToString.get(i), evalTo.get(i));
         }
         ClosureVal want = new ClosureVal(evalToString, f, newEnv);
         
