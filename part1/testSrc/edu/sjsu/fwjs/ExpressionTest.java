@@ -97,7 +97,7 @@ public class ExpressionTest {
         assertEquals(se.evaluate(env), new IntVal(6));
     }
 
-   /* 
+   
     @Test (timeout = 1000 * 30)  // 30 seconds 
     public void testWhileExpr() throws Exception{
         Environment env = new Environment();
@@ -113,7 +113,7 @@ public class ExpressionTest {
         assertEquals(new IntVal(0), env.resolveVar("x"));
 
     }
-    */
+    
     @Test (timeout = 1000 * 10)  // 10 seconds 
     public void testWhileExpr2() throws Exception{
         Environment env = new Environment();
