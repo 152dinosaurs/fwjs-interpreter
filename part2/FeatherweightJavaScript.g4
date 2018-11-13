@@ -3,12 +3,20 @@ grammar FeatherweightJavaScript;
 
 @header { package edu.sjsu.fwjs.parser; }
 
+// ***Lexing rules***
+
 // Reserved words
 IF        : 'if' ;
 ELSE      : 'else' ;
+WHILE	  : 'while' ; //added, think right
+FUNCTION  : 'function' ; //added, not sure on this
+VAR		  : 'var' ; //added, not sure
+PRINT	  : 'print' ; //added, not sure
 
 // Literals
-INT       : [1-9][0-9]* | '0' ;
+INT       : [1-9][0-9]* | '0' ; //any length + no leading 0
+BOOL	  : ['true''false'] //added, not sure
+NULL	  : 'null' //not sure on this
 
 // Symbols
 MUL       : '*' ;
@@ -22,7 +30,7 @@ LINE_COMMENT  : '//' ~[\n\r]* -> skip ;
 WS            : [ \t]+ -> skip ; // ignore whitespace
 
 
-// ***Paring rules ***
+// ***Parsing rules ***
 
 /** The start rule */
 prog: stat+ ;
