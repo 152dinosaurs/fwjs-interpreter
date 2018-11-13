@@ -21,6 +21,14 @@ NULL	  : 'null' //not sure on this
 // Symbols
 MUL       : '*' ;
 DIV       : '/' ;
+ADD 	  : '+' ;
+SUB		  : '-' ;
+MOD 	  : '%' ;
+GREATER   : '>' ;
+LESS 	  : '<' ;
+GREATEREQ : '>=';
+LESSEQ	  : '<=';
+EQUAL	  : '==';
 SEPARATOR : ';' ;
 
 
