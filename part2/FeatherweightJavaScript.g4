@@ -1,6 +1,5 @@
 grammar FeatherweightJavaScript;
 
-
 @header { package edu.sjsu.fwjs.parser; }
 
 // ***Lexing rules***
@@ -8,14 +7,14 @@ grammar FeatherweightJavaScript;
 // Reserved words
 IF        : 'if' ;
 ELSE      : 'else' ;
-WHILE	  : 'while' ; //added, think right
-FUNCTION  : 'function' ; //added, not sure on this
-VAR		  : 'var' ; //added, not sure
-PRINT	  : 'print' ; //added, not sure
+WHILE	  : 'while' ; //added
+FUNCTION  : 'function' ; //added
+VAR		  : 'var' ; //added
+PRINT	  : 'print' ; //added
 
 // Literals
 INT       : [1-9][0-9]* | '0' ; //any length + no leading 0
-BOOL	  : ['true''false'] //added, not sure
+BOOL	  : 'true' | 'false' ; //added, not sure
 NULL	  : 'null' //not sure on this
 
 // Symbols
@@ -31,10 +30,12 @@ LESSEQ	  : '<=';
 EQUAL	  : '==';
 SEPARATOR : ';' ;
 
+// Identifiers
+VARNAME	  : ['a'..'z' | 'A'..'Z' | '_'] ['a'..'z' | 'A'..'Z' | '_' | 0-9]* ; //added as identifier, not sure
 
 // Whitespace and comments
 NEWLINE   : '\r'? '\n' -> skip ;
-BLOCK_COMMENT :'/*' ~[\n\r]* '*/' -> skip ; //added, not sure
+BLOCK_COMMENT :'/*' .*? '*/' -> skip ; //added, not sure
 LINE_COMMENT  : '//' ~[\n\r]* -> skip ;
 WS            : [ \t]+ -> skip ; // ignore whitespace
 
