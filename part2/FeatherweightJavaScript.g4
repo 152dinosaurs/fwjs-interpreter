@@ -34,6 +34,7 @@ SEPARATOR : ';' ;
 
 // Whitespace and comments
 NEWLINE   : '\r'? '\n' -> skip ;
+BLOCK_COMMENT :'/*' ~[\n\r]* '*/' -> skip ; //added, not sure
 LINE_COMMENT  : '//' ~[\n\r]* -> skip ;
 WS            : [ \t]+ -> skip ; // ignore whitespace
 
