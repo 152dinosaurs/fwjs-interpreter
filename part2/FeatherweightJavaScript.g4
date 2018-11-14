@@ -15,7 +15,7 @@ PRINT	  : 'print' ; //added
 // Literals
 INT       : [1-9][0-9]* | '0' ;
 BOOL	  : 'true' | 'false' ; //added
-NULL	  : 'null' ; //added
+NULL	  : 'null' //added
 
 // Symbols
 MUL       : '*' ;
@@ -40,7 +40,7 @@ LINE_COMMENT  : '//' ~[\n\r]* -> skip ;
 WS            : [ \t]+ -> skip ; // ignore whitespace
 
 
-// ***Parsing rules ***
+// ***Paring rules ***
 
 /** The start rule */
 prog: stat+ ;
@@ -48,14 +48,31 @@ prog: stat+ ;
 stat: expr SEPARATOR                                    # bareExpr
     | IF '(' expr ')' block ELSE block                  # ifThenElse
     | IF '(' expr ')' block                             # ifThen
+    | expr SEPARATOR //??
+    |
+    | WHILE '(' expr ')' block                             # while
+    | PRINT '(' expr ')' SEPARATOR?                     # print
+    | SEPARATOR                                            # empty
     ;
 
-expr: expr op=( '*' | '/' | '%' ) expr                  # MulDivMod
-    | INT                                               # int
-    | '(' expr ')'                                      # parens
+expr: expr op=( MUL | DIV | MOD ) expr                  # MulDivMod
+    | expr op=( ADD | SUB ) expr                         # AddSub
+    | expr op=( LT | LE | GT | GE | EQ ) expr             # Compare
+    | FUNCTION params block     ??                        # FuncDec
+    | expr args                     ??                    # FuncApp
+    | VAR ID ASSIGN expr             ..                    # VarDec
+    | ID                             ..                    # VarRef
+    | ID ASSIGN expr                     ..                # Assign
+    | INT                           ..                    # int
+    | BOOL                                     ..            # bool
+    | NULL                                 ..                # null
+    | '(' expr ')'                    ..                  # parens
     ;
 
 block: '{' stat* '}'                                    # fullBlock
      | stat                                             # simpBlock
      ;
 
+params: '(' (ID (',' ID)* )? ')' ; #??
+
+args: '(' (expr (',' expr)* )? ')' ; #??
