@@ -13,9 +13,9 @@ VAR		  : 'var' ; //added
 PRINT	  : 'print' ; //added
 
 // Literals
-INT       : [1-9][0-9]* | '0' ; //any length + no leading 0
-BOOL	  : 'true' | 'false' ; //added, not sure
-NULL	  : 'null' //not sure on this
+INT       : [1-9][0-9]* | '0' ;
+BOOL	  : 'true' | 'false' ; //added
+NULL	  : 'null' //added
 
 // Symbols
 MUL       : '*' ;
