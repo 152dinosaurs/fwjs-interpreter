@@ -1,4 +1,5 @@
 # Update these variables to match the locations
+# (i added jars to the lib directory; no further modification needed. -micah)
 JUNIT_JAR=lib/junit-4.12.jar
 HAMCREST_JAR=lib/hamcrest-core-1.3.jar
 ANTLR_JAR=lib/antlr-4.4-complete.jar
