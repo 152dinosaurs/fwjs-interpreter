@@ -7,15 +7,15 @@ grammar FeatherweightJavaScript;
 // Reserved words
 IF        : 'if' ;
 ELSE      : 'else' ;
-WHILE	  : 'while' ; //added
-FUNCTION  : 'function' ; //added
-VAR		  : 'var' ; //added
-PRINT	  : 'print' ; //added
+WHILE	  : 'while' ;
+FUNCTION  : 'function' ;
+VAR		  : 'var' ;
+PRINT	  : 'print' ;
 
 // Literals
 INT       : [1-9][0-9]* | '0' ;
-BOOL	  : 'true' | 'false' ; //added
-NULL	  : 'null' ; //added
+BOOL	  : 'true' | 'false' ;
+NULL	  : 'null' ;
 
 // Symbols
 MUL       : '*' ;
@@ -31,13 +31,13 @@ EQUAL	  : '==';
 SEPARATOR : ';' ;
 
 // Identifiers
-ID	      : [a-zA-Z_][a-zA-Z0-9_]*; //added as identifier, not sure
+ID	      : [a-zA-Z_][a-zA-Z0-9_]*;
 
 // Whitespace and comments
 NEWLINE   : '\r'? '\n' -> skip ;
-BLOCK_COMMENT :'/*' .*? '*/' -> skip ; //added, not sure
+BLOCK_COMMENT :'/*' .*? '*/' -> skip ;
 LINE_COMMENT  : '//' ~[\n\r]* -> skip ;
-WS            : [ \t]+ -> skip ; // ignore whitespace
+WS            : [ \t]+ -> skip ; 
 
 
 // ***Parsing rules ***
@@ -45,6 +45,7 @@ WS            : [ \t]+ -> skip ; // ignore whitespace
 /** The start rule */
 prog: stat+ ;
 
+<<<<<<< HEAD
 stat: expr SEPARATOR                                    # bareExpr
     | IF '(' expr ')' block ELSE block                  # ifThenElse
     | IF '(' expr ')' block                             # ifThen
@@ -66,10 +67,32 @@ expr: expr op=( MUL | DIV | MOD ) expr                  				# Mul Div Mod
     | NULL                                                 				# null
     | '(' expr ')'                                      				# An expression in parenthesis
 
+=======
+stat: expr SEPARATOR                                       # bareExpr
+    | IF '(' expr ')' block ELSE block                     # ifThenElse
+    | IF '(' expr ')' block                                # ifThen
+    | WHILE '(' expr ')' block                             # while
+    | PRINT '(' expr ')' SEPARATOR?                        # print
+    | SEPARATOR                                            # empty
     ;
 
-block: '{' stat* '}'                                    # fullBlock
-     | stat                                             # simpBlock
+expr: expr op=( MUL | DIV | MOD ) expr                     # MulDivMod
+    | expr op=( ADD | SUB ) expr                           # AddSub
+    | expr op=( LESS | LESSEQ | GREATER | GREATEREQ | EQUAL ) expr                                                   # Compare
+    | FUNCTION params block                                # FuncDec
+    | ID args                                              # FuncApp
+    | VAR ID '=' expr                                      # VarDec
+    | ID                                                   # VarRef
+    | ID '=' expr                                          # Assign
+    | INT                                                  # int
+    | BOOL                                                 # bool
+    | NULL                                                 # null
+    | '(' expr ')'                                         # parens
+>>>>>>> 46c1569a1d9017cd90cd14e1011a3997038fd804
+    ;
+
+block: '{' stat* '}'                                       # fullBlock
+     | stat                                                # simpBlock
      ;
 
 params: '(' (ID (',' ID)* )? ')' ; //parameters
