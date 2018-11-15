@@ -1,22 +1,2 @@
 mkdir -p parseTrees
 java -cp build:lib/antlr-4.4-complete.jar org.antlr.v4.runtime.misc.TestRig edu.sjsu.fwjs.parser.FeatherweightJavaScript prog -tree fwjsScripts/closure.fwjs > parseTrees/closure.fwjs.tree;  java -cp build:lib/antlr-4.4-complete.jar org.antlr.v4.runtime.misc.TestRig edu.sjsu.fwjs.parser.FeatherweightJavaScript prog -tree fwjsScripts/examples.fwjs > parseTrees/examples.fwjs.tree;  java -cp build:lib/antlr-4.4-complete.jar org.antlr.v4.runtime.misc.TestRig edu.sjsu.fwjs.parser.FeatherweightJavaScript prog -tree fwjsScripts/functions.fwjs > parseTrees/functions.fwjs.tree;  java -cp build:lib/antlr-4.4-complete.jar org.antlr.v4.runtime.misc.TestRig edu.sjsu.fwjs.parser.FeatherweightJavaScript prog -tree fwjsScripts/operators.fwjs > parseTrees/operators.fwjs.tree;  java -cp build:lib/antlr-4.4-complete.jar org.antlr.v4.runtime.misc.TestRig edu.sjsu.fwjs.parser.FeatherweightJavaScript prog -tree fwjsScripts/test.fwjs > parseTrees/test.fwjs.tree;  java -cp build:lib/antlr-4.4-complete.jar org.antlr.v4.runtime.misc.TestRig edu.sjsu.fwjs.parser.FeatherweightJavaScript prog -tree fwjsScripts/controlStructs.fwjs > parseTrees/controlStructs.fwjs.tree;  java -cp build:lib/antlr-4.4-complete.jar org.antlr.v4.runtime.misc.TestRig edu.sjsu.fwjs.parser.FeatherweightJavaScript prog -tree fwjsScripts/factorial.fwjs > parseTrees/factorial.fwjs.tree;  java -cp build:lib/antlr-4.4-complete.jar org.antlr.v4.runtime.misc.TestRig edu.sjsu.fwjs.parser.FeatherweightJavaScript prog -tree fwjsScripts/lists.fwjs > parseTrees/lists.fwjs.tree;  java -cp build:lib/antlr-4.4-complete.jar org.antlr.v4.runtime.misc.TestRig edu.sjsu.fwjs.parser.FeatherweightJavaScript prog -tree fwjsScripts/scoping.fwjs > parseTrees/scoping.fwjs.tree;  java -cp build:lib/antlr-4.4-complete.jar org.antlr.v4.runtime.misc.TestRig edu.sjsu.fwjs.parser.FeatherweightJavaScript prog -tree fwjsScripts/while.fwjs > parseTrees/while.fwjs.tree;
-line 17:7 mismatched input '{' expecting {'*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
-line 19:0 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
-line 19:7 mismatched input '{' expecting {'*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
-line 21:0 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
-line 24:10 mismatched input '{' expecting {'*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
-line 26:0 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
-line 29:15 mismatched input '{' expecting {'*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
-line 32:0 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
-line 34:10 mismatched input 'print' expecting {'*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
-line 37:12 mismatched input 'print' expecting {'*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
-line 1:31 mismatched input '{' expecting {'*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
-line 2:16 mismatched input '{' expecting {'*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
-line 4:2 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
-line 4:9 mismatched input '{' expecting {'*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
-line 6:20 mismatched input '{' expecting {'*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
-line 9:4 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
-line 11:2 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
-line 39:20 extraneous input '0' expecting {'*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
-line 3:13 mismatched input '{' expecting {'*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
-line 6:0 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
