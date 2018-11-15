@@ -31,7 +31,7 @@ EQUAL	  : '==';
 SEPARATOR : ';' ;
 
 // Identifiers
-VARNAME	  : ['a'..'z' | 'A'..'Z' | '_'] ['a'..'z' | 'A'..'Z' | '_' | 0-9]* ; //added as identifier, not sure
+ID	      : ['a'..'z' | 'A'..'Z' | '_'] ['a'..'z' | 'A'..'Z' | '_' | 0-9]* ; //added as identifier, not sure
 
 // Whitespace and comments
 NEWLINE   : '\r'? '\n' -> skip ;
@@ -57,7 +57,7 @@ stat: expr SEPARATOR                                    # bareExpr
 
 expr: expr op=( MUL | DIV | MOD ) expr                  # MulDivMod
     | expr op=( ADD | SUB ) expr                         # AddSub
-    | expr op=( LT | LE | GT | GE | EQ ) expr             # Compare
+    | expr op=( LESS | LESSEQ | GREATER | GREATEREQ | EQUAL ) expr             # Compare
     | FUNCTION params block                             # FuncDec
     | expr args                                         # FuncApp
     | VAR ID ASSIGN expr                                 # VarDec
