@@ -1,0 +1,476 @@
+line 1:4 token recognition error at: 'm'
+line 1:6 token recognition error at: 'k'
+line 1:7 token recognition error at: 'eC'
+line 1:9 token recognition error at: 'o'
+line 1:10 token recognition error at: 'u'
+line 1:11 token recognition error at: 'nt'
+line 1:13 token recognition error at: 'er'
+line 2:6 token recognition error at: 'i '
+line 5:4 token recognition error at: 'i '
+line 5:8 token recognition error at: 'i '
+line 9:4 token recognition error at: 'c'
+line 9:5 token recognition error at: 'tr '
+line 9:10 token recognition error at: 'm'
+line 9:12 token recognition error at: 'k'
+line 9:13 token recognition error at: 'eC'
+line 9:15 token recognition error at: 'o'
+line 9:16 token recognition error at: 'u'
+line 9:17 token recognition error at: 'nt'
+line 9:19 token recognition error at: 'er'
+line 10:6 token recognition error at: 'c'
+line 10:7 token recognition error at: 'tr('
+line 11:6 token recognition error at: 'c'
+line 11:7 token recognition error at: 'tr('
+line 12:6 token recognition error at: 'c'
+line 12:7 token recognition error at: 'tr('
+line 13:6 token recognition error at: 'c'
+line 13:7 token recognition error at: 'tr('
+line 1:5 missing '=' at 'a'
+line 1:15 mismatched input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 1:18 extraneous input 'function' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 1:28 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 1:29 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 2:2 mismatched input 'var' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 4:0 mismatched input '  ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 4:2 extraneous input 'function' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 4:12 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 4:13 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 6:2 extraneous input '}' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 7:0 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
+line 9:11 extraneous input 'a' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 10:10 no viable alternative at input ')'
+line 10:11 extraneous input ')' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
+line 11:0 extraneous input 'print' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 11:11 extraneous input ')' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 12:0 extraneous input 'print' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 12:11 extraneous input ')' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 13:0 extraneous input 'print' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 13:11 extraneous input ')' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 15:0 missing ';' at '<EOF>'
+line 1:4 token recognition error at: 'x'
+line 2:0 token recognition error at: 'x'
+line 3:0 token recognition error at: 'y'
+line 4:12 token recognition error at: 'y'
+line 5:6 token recognition error at: 'x'
+line 6:6 token recognition error at: 'y'
+line 1:5 extraneous input ' ' expecting '='
+line 2:1 mismatched input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 3:1 mismatched input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 3:4 extraneous input 'true' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 4:0 mismatched input 'z ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 4:4 mismatched input 'false' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 4:9 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 5:7 no viable alternative at input ')'
+line 6:0 extraneous input 'print' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 8:0 missing ';' at '<EOF>'
+line 7:4 token recognition error at: 'id'
+line 7:6 token recognition error at: 'en'
+line 7:8 token recognition error at: 't '
+line 7:21 token recognition error at: 'x'
+line 7:26 token recognition error at: 'x'
+line 8:4 token recognition error at: 'tw'
+line 8:6 token recognition error at: 'o'
+line 9:6 token recognition error at: 'id'
+line 9:8 token recognition error at: 'en'
+line 9:10 token recognition error at: 't('
+line 9:12 token recognition error at: 'tw'
+line 9:14 token recognition error at: 'o'
+line 10:6 token recognition error at: 'id'
+line 10:8 token recognition error at: 'en'
+line 10:10 token recognition error at: 't('
+line 10:12 token recognition error at: 'tw'
+line 10:14 token recognition error at: 'o'
+line 12:5 token recognition error at: 'd'
+line 12:6 token recognition error at: 'd'
+line 12:7 token recognition error at: 'T'
+line 12:8 token recognition error at: 'wo'
+line 12:22 token recognition error at: 'x'
+line 12:25 token recognition error at: 'y'
+line 13:2 token recognition error at: 'x'
+line 13:6 token recognition error at: 'y'
+line 15:7 token recognition error at: 'd'
+line 15:8 token recognition error at: 'd'
+line 15:9 token recognition error at: 'T'
+line 15:10 token recognition error at: 'wo'
+line 7:12 extraneous input 'function' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 7:23 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 7:24 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 7:29 extraneous input '}' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 8:7 extraneous input ' ' expecting '='
+line 8:10 extraneous input 'function' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 8:20 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 8:21 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 8:26 extraneous input '}' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 9:15 no viable alternative at input ')'
+line 9:16 extraneous input ')' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
+line 10:16 no viable alternative at input ')'
+line 10:18 extraneous input ')' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
+line 12:10 extraneous input ' ' expecting '='
+line 12:13 extraneous input 'function' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 12:23 mismatched input ',' expecting ')'
+line 12:26 mismatched input ')' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 12:28 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 13:3 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 14:0 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
+line 7:4 token recognition error at: 'x'
+line 8:6 token recognition error at: 'x'
+line 9:4 token recognition error at: 'y'
+line 10:6 token recognition error at: 'y'
+line 13:0 token recognition error at: 'y'
+line 15:1 token recognition error at: 'er'
+line 15:3 token recognition error at: 'o'
+line 16:0 token recognition error at: 'x'
+line 7:5 extraneous input ' ' expecting '='
+line 8:7 no viable alternative at input ')'
+line 9:5 extraneous input ' ' expecting '='
+line 10:7 no viable alternative at input ')'
+line 14:2 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 15:4 mismatched input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 17:1 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 18:1 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 1:4 token recognition error at: 'f '
+line 1:17 token recognition error at: 'o'
+line 1:18 token recognition error at: 'p,'
+line 1:21 token recognition error at: 'x'
+line 1:24 token recognition error at: 'y'
+line 2:2 token recognition error at: 'o'
+line 2:3 token recognition error at: 'p('
+line 2:5 token recognition error at: 'x'
+line 2:7 token recognition error at: 'y'
+line 5:8 token recognition error at: 'f('
+line 5:19 token recognition error at: 'x'
+line 5:21 token recognition error at: 'y'
+line 5:25 token recognition error at: 'x'
+line 5:29 token recognition error at: 'y'
+line 9:4 token recognition error at: 'x'
+line 10:6 token recognition error at: 'x'
+line 1:8 extraneous input 'function' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 1:26 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 1:27 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 2:6 mismatched input ',' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 3:0 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
+line 5:10 extraneous input 'function' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 5:20 extraneous input ',' expecting ')'
+line 5:23 extraneous input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 5:26 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 5:32 mismatched input '}' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 5:36 mismatched input ',' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 5:39 extraneous input ')' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 9:0 mismatched input 'var' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 9:5 extraneous input ' ' expecting '='
+line 9:8 extraneous input 'null' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 10:7 no viable alternative at input ')'
+line 16:0 token recognition error at: 'x'
+line 17:4 token recognition error at: 'x'
+line 25:2 token recognition error at: 'b'
+line 28:0 token recognition error at: 'i '
+line 29:7 token recognition error at: 'i '
+line 30:8 token recognition error at: 'i)'
+line 31:2 token recognition error at: 'i '
+line 31:6 token recognition error at: 'i '
+line 37:4 token recognition error at: 'i '
+line 16:4 extraneous input 'false' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 17:2 no viable alternative at input 'if '
+line 17:6 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 17:7 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 19:0 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
+line 19:2 mismatched input 'else' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 19:7 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 21:0 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
+line 24:2 no viable alternative at input 'if '
+line 24:9 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 24:10 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 25:3 mismatched input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 26:0 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
+line 29:5 extraneous input ' ' expecting '('
+line 29:9 no viable alternative at input '<'
+line 29:15 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 30:2 extraneous input 'print' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 30:10 missing ')' at ';'
+line 32:0 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
+line 34:9 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 34:10 extraneous input 'print' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 35:0 extraneous input 'else' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
+line 35:5 extraneous input 'print' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 37:2 no viable alternative at input 'if '
+line 37:6 missing ')' at '>'
+line 37:10 mismatched input ')' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 37:12 extraneous input 'print' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 1:4 token recognition error at: 'fac'
+line 1:7 token recognition error at: 'to'
+line 1:9 token recognition error at: 'r'
+line 1:10 token recognition error at: 'ia'
+line 1:12 token recognition error at: 'l'
+line 1:26 token recognition error at: 'num'
+line 2:6 token recognition error at: 'num'
+line 5:8 token recognition error at: 'tm'
+line 5:10 token recognition error at: 'p '
+line 5:14 token recognition error at: 'num'
+line 6:11 token recognition error at: 'num'
+line 7:6 token recognition error at: 'num'
+line 7:12 token recognition error at: 'num'
+line 8:6 token recognition error at: 'tm'
+line 8:8 token recognition error at: 'p '
+line 8:12 token recognition error at: 'tm'
+line 8:14 token recognition error at: 'p '
+line 8:18 token recognition error at: 'num'
+line 10:4 token recognition error at: 'tm'
+line 10:6 token recognition error at: 'p;'
+line 14:4 token recognition error at: 'r'
+line 14:5 token recognition error at: 'es'
+line 14:7 token recognition error at: 'u'
+line 14:8 token recognition error at: 'l'
+line 14:9 token recognition error at: 't '
+line 14:13 token recognition error at: 'fac'
+line 14:16 token recognition error at: 'to'
+line 14:18 token recognition error at: 'r'
+line 14:19 token recognition error at: 'ia'
+line 14:21 token recognition error at: 'l'
+line 15:6 token recognition error at: 'r'
+line 15:7 token recognition error at: 'es'
+line 15:9 token recognition error at: 'u'
+line 15:10 token recognition error at: 'l'
+line 15:11 token recognition error at: 't)'
+line 1:13 extraneous input ' ' expecting '='
+line 1:16 mismatched input 'function' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 1:24 extraneous input ' ' expecting '('
+line 1:31 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 2:2 mismatched input 'if' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 2:15 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 2:16 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 4:2 mismatched input '}' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 4:4 mismatched input 'else' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 4:9 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 5:4 mismatched input 'var' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 6:4 mismatched input 'while' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 6:9 extraneous input ' ' expecting '('
+line 6:20 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 7:9 mismatched input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 7:15 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 9:4 mismatched input '}' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 11:0 mismatched input '  ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 11:2 mismatched input '}' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 15:13 no viable alternative at input ';'
+line 17:0 missing ';' at '<EOF>'
+line 10:4 token recognition error at: 'tru '
+line 10:19 token recognition error at: 'x'
+line 10:21 token recognition error at: 'y'
+line 10:26 token recognition error at: 'x'
+line 11:4 token recognition error at: 'fl'
+line 11:6 token recognition error at: 's'
+line 11:19 token recognition error at: 'x'
+line 11:21 token recognition error at: 'y'
+line 11:26 token recognition error at: 'y'
+line 14:4 token recognition error at: 'pa'
+line 14:6 token recognition error at: 'ir'
+line 14:20 token recognition error at: 'x'
+line 14:22 token recognition error at: 'y'
+line 15:11 token recognition error at: 'f)'
+line 15:16 token recognition error at: 'f('
+line 15:18 token recognition error at: 'x'
+line 15:20 token recognition error at: 'y'
+line 18:4 token recognition error at: 'fs'
+line 18:6 token recognition error at: 't '
+line 18:19 token recognition error at: 'p)'
+line 18:24 token recognition error at: 'p('
+line 18:26 token recognition error at: 'tru)'
+line 19:4 token recognition error at: 's'
+line 19:5 token recognition error at: 'nd'
+line 19:19 token recognition error at: 'p)'
+line 19:24 token recognition error at: 'p('
+line 19:26 token recognition error at: 'fl'
+line 19:28 token recognition error at: 's'
+line 21:4 token recognition error at: 'p '
+line 21:8 token recognition error at: 'pa'
+line 21:10 token recognition error at: 'ir'
+line 22:6 token recognition error at: 'fs'
+line 22:8 token recognition error at: 't('
+line 22:10 token recognition error at: 'p)'
+line 23:6 token recognition error at: 's'
+line 23:7 token recognition error at: 'nd'
+line 23:10 token recognition error at: 'p)'
+line 26:4 token recognition error at: 'c'
+line 26:5 token recognition error at: 'o'
+line 26:6 token recognition error at: 'ns'
+line 26:11 token recognition error at: 'pa'
+line 26:13 token recognition error at: 'ir'
+line 27:4 token recognition error at: 'h'
+line 27:5 token recognition error at: 'ea'
+line 27:7 token recognition error at: 'd'
+line 27:11 token recognition error at: 'fs'
+line 27:13 token recognition error at: 't;'
+line 28:4 token recognition error at: 'ta'
+line 28:6 token recognition error at: 'il'
+line 28:11 token recognition error at: 's'
+line 28:12 token recognition error at: 'nd'
+line 30:4 token recognition error at: 'is'
+line 30:6 token recognition error at: 'E'
+line 30:7 token recognition error at: 'm'
+line 30:8 token recognition error at: 'pt'
+line 30:10 token recognition error at: 'y'
+line 30:23 token recognition error at: 'l'
+line 30:24 token recognition error at: 's'
+line 30:25 token recognition error at: 't)'
+line 31:2 token recognition error at: 'l'
+line 31:3 token recognition error at: 's'
+line 31:4 token recognition error at: 't '
+line 34:4 token recognition error at: 'num'
+line 34:7 token recognition error at: 's'
+line 34:11 token recognition error at: 'c'
+line 34:12 token recognition error at: 'o'
+line 34:13 token recognition error at: 'ns'
+line 34:19 token recognition error at: 'c'
+line 34:20 token recognition error at: 'o'
+line 34:21 token recognition error at: 'ns'
+line 34:27 token recognition error at: 'c'
+line 34:28 token recognition error at: 'o'
+line 34:29 token recognition error at: 'ns'
+line 34:35 token recognition error at: 'c'
+line 34:36 token recognition error at: 'o'
+line 34:37 token recognition error at: 'ns'
+line 34:43 token recognition error at: 'c'
+line 34:44 token recognition error at: 'o'
+line 34:45 token recognition error at: 'ns'
+line 35:4 token recognition error at: 'c'
+line 35:5 token recognition error at: 'o'
+line 35:6 token recognition error at: 'ns'
+line 35:12 token recognition error at: 'c'
+line 35:13 token recognition error at: 'o'
+line 35:14 token recognition error at: 'ns'
+line 35:20 token recognition error at: 'c'
+line 35:21 token recognition error at: 'o'
+line 35:22 token recognition error at: 'ns'
+line 35:28 token recognition error at: 'c'
+line 35:29 token recognition error at: 'o'
+line 35:30 token recognition error at: 'ns'
+line 35:36 token recognition error at: 'c'
+line 35:37 token recognition error at: 'o'
+line 35:38 token recognition error at: 'ns'
+line 38:4 token recognition error at: 's'
+line 38:5 token recognition error at: 'u'
+line 38:6 token recognition error at: 'm'
+line 38:7 token recognition error at: 'L'
+line 38:8 token recognition error at: 'is'
+line 38:10 token recognition error at: 't '
+line 38:23 token recognition error at: 'l'
+line 38:24 token recognition error at: 's'
+line 38:25 token recognition error at: 't)'
+line 39:6 token recognition error at: 'is'
+line 39:8 token recognition error at: 'E'
+line 39:9 token recognition error at: 'm'
+line 39:10 token recognition error at: 'pt'
+line 39:12 token recognition error at: 'y'
+line 39:14 token recognition error at: 'l'
+line 39:15 token recognition error at: 's'
+line 39:16 token recognition error at: 't)'
+line 40:7 token recognition error at: 'h'
+line 40:8 token recognition error at: 'ea'
+line 40:10 token recognition error at: 'd'
+line 40:12 token recognition error at: 'l'
+line 40:13 token recognition error at: 's'
+line 40:14 token recognition error at: 't)'
+line 40:19 token recognition error at: 's'
+line 40:20 token recognition error at: 'u'
+line 40:21 token recognition error at: 'm'
+line 40:22 token recognition error at: 'L'
+line 40:23 token recognition error at: 'is'
+line 40:25 token recognition error at: 't('
+line 40:27 token recognition error at: 'ta'
+line 40:29 token recognition error at: 'il'
+line 40:32 token recognition error at: 'l'
+line 40:33 token recognition error at: 's'
+line 40:34 token recognition error at: 't)'
+line 43:6 token recognition error at: 's'
+line 43:7 token recognition error at: 'u'
+line 43:8 token recognition error at: 'm'
+line 43:9 token recognition error at: 'L'
+line 43:10 token recognition error at: 'is'
+line 43:12 token recognition error at: 't('
+line 43:14 token recognition error at: 'num'
+line 43:17 token recognition error at: 's'
+line 10:10 extraneous input 'function' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 10:20 extraneous input ',' expecting ')'
+line 10:23 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 10:24 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 10:29 extraneous input '}' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 11:7 extraneous input ' ' expecting '='
+line 11:10 extraneous input 'function' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 11:20 extraneous input ',' expecting ')'
+line 11:23 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 11:24 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 11:29 extraneous input '}' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 14:8 extraneous input ' ' expecting '='
+line 14:11 extraneous input 'function' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 14:21 extraneous input ',' expecting ')'
+line 14:24 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 14:25 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 15:2 extraneous input 'function' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 15:14 mismatched input '{' expecting {'(', ')', ',', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '=='}
+line 15:19 mismatched input ',' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 15:24 extraneous input '}' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 16:0 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
+line 18:10 extraneous input 'function' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 18:22 mismatched input '{' expecting {'(', ')', ',', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '=='}
+line 18:32 extraneous input '}' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 19:7 extraneous input ' ' expecting '='
+line 19:10 extraneous input 'function' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 19:22 mismatched input '{' expecting {'(', ')', ',', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '=='}
+line 19:32 extraneous input '}' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 22:12 no viable alternative at input ')'
+line 23:12 no viable alternative at input ')'
+line 23:13 mismatched input ';' expecting {'(', ')', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '=='}
+line 26:8 extraneous input ' ' expecting '='
+line 27:8 extraneous input ' ' expecting '='
+line 28:0 mismatched input 'var' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 28:8 extraneous input ' ' expecting '='
+line 30:11 extraneous input ' ' expecting '='
+line 30:14 extraneous input 'function' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 30:28 mismatched input '{' expecting {'(', ')', ',', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '=='}
+line 31:9 extraneous input 'null' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 32:0 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
+line 34:8 extraneous input ' ' expecting '='
+line 35:45 extraneous input 'null' expecting {'(', ')', ',', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '=='}
+line 38:14 extraneous input 'function' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 38:28 mismatched input '{' expecting {'(', ')', ',', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '=='}
+line 39:2 mismatched input 'if' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 39:18 no viable alternative at input ')'
+line 39:19 mismatched input ' 0' expecting {'(', ')', ',', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '=='}
+line 40:2 mismatched input 'else' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 40:37 extraneous input ';' expecting {'(', ')', ',', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '=='}
+line 41:0 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
+line 43:18 no viable alternative at input ')'
+line 43:19 extraneous input ')' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
+line 6:4 token recognition error at: 'x'
+line 8:4 token recognition error at: 'f '
+line 9:8 token recognition error at: 'x'
+line 12:4 token recognition error at: 'g'
+line 13:6 token recognition error at: 'x'
+line 14:2 token recognition error at: 'f('
+line 15:8 token recognition error at: 'x'
+line 18:0 token recognition error at: 'g'
+line 6:5 extraneous input ' ' expecting '='
+line 8:8 extraneous input 'function' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 8:18 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 8:19 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 9:2 extraneous input 'print' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 10:0 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
+line 12:5 extraneous input ' ' expecting '='
+line 12:8 extraneous input 'function' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 12:18 extraneous input ' ' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 12:19 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 13:2 mismatched input 'var' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 13:7 extraneous input ' ' expecting '='
+line 14:4 extraneous input ')' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 15:2 extraneous input 'print' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 16:0 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
+line 18:2 no viable alternative at input ')'
+line 2:4 token recognition error at: 'i '
+line 3:7 token recognition error at: 'i<'
+line 4:8 token recognition error at: 'i)'
+line 5:2 token recognition error at: 'i '
+line 5:6 token recognition error at: 'i '
+line 3:5 extraneous input ' ' expecting '('
+line 3:13 mismatched input '{' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 4:2 extraneous input 'print' expecting {'(', '*', '/', '+', '-', '%', '>', '<', '>=', '<=', '==', ';'}
+line 4:10 missing ')' at ';'
+line 6:0 extraneous input '}' expecting {<EOF>, '(', 'if', 'while', 'function', 'var', 'print', INT, BOOL, 'null', ';', ID}
