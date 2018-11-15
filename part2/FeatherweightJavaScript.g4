@@ -60,9 +60,9 @@ expr: expr op=( MUL | DIV | MOD ) expr                  # MulDivMod
     | expr op=( LESS | LESSEQ | GREATER | GREATEREQ | EQUAL ) expr             # Compare
     | FUNCTION params block                             # FuncDec
     | expr args                                         # FuncApp
-    | VAR ID ASSIGN expr                                 # VarDec
+    | VAR ID '=' expr                                 # VarDec
     | ID                                                 # VarRef
-    | ID ASSIGN expr                                     # Assign
+    | ID '=' expr                                     # Assign
     | INT                                               # int
     | BOOL                                                 # bool
     | NULL                                                 # null
