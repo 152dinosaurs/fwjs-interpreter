@@ -58,21 +58,21 @@ stat: expr SEPARATOR                                    # bareExpr
 expr: expr op=( MUL | DIV | MOD ) expr                  # MulDivMod
     | expr op=( ADD | SUB ) expr                         # AddSub
     | expr op=( LT | LE | GT | GE | EQ ) expr             # Compare
-    | FUNCTION params block     ??                        # FuncDec
-    | expr args                     ??                    # FuncApp
-    | VAR ID ASSIGN expr             ..                    # VarDec
-    | ID                             ..                    # VarRef
-    | ID ASSIGN expr                     ..                # Assign
-    | INT                           ..                    # int
-    | BOOL                                     ..            # bool
-    | NULL                                 ..                # null
-    | '(' expr ')'                    ..                  # parens
+    | FUNCTION params block                             # FuncDec
+    | expr args                                         # FuncApp
+    | VAR ID ASSIGN expr                                 # VarDec
+    | ID                                                 # VarRef
+    | ID ASSIGN expr                                     # Assign
+    | INT                                               # int
+    | BOOL                                                 # bool
+    | NULL                                                 # null
+    | '(' expr ')'                                      # parens
     ;
 
 block: '{' stat* '}'                                    # fullBlock
      | stat                                             # simpBlock
      ;
 
-params: '(' (ID (',' ID)* )? ')' ; #??
+params: '(' (ID (',' ID)* )? ')' ; // ??
 
-args: '(' (expr (',' expr)* )? ')' ; #??
+args: '(' (expr (',' expr)* )? ')' ; // ??
