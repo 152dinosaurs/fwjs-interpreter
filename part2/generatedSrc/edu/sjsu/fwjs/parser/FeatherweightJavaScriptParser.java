@@ -411,6 +411,18 @@ public class FeatherweightJavaScriptParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
+	public static class FuncAppContext extends ExprContext {
+		public TerminalNode ID() { return getToken(FeatherweightJavaScriptParser.ID, 0); }
+		public ArgsContext args() {
+			return getRuleContext(ArgsContext.class,0);
+		}
+		public FuncAppContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof FeatherweightJavaScriptVisitor ) return ((FeatherweightJavaScriptVisitor<? extends T>)visitor).visitFuncApp(this);
+			else return visitor.visitChildren(this);
+		}
+	}
 	public static class CompareContext extends ExprContext {
 		public Token op;
 		public TerminalNode LESS() { return getToken(FeatherweightJavaScriptParser.LESS, 0); }
@@ -428,20 +440,6 @@ public class FeatherweightJavaScriptParser extends Parser {
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof FeatherweightJavaScriptVisitor ) return ((FeatherweightJavaScriptVisitor<? extends T>)visitor).visitCompare(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	public static class FuncAppContext extends ExprContext {
-		public ExprContext expr() {
-			return getRuleContext(ExprContext.class,0);
-		}
-		public ArgsContext args() {
-			return getRuleContext(ArgsContext.class,0);
-		}
-		public FuncAppContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FeatherweightJavaScriptVisitor ) return ((FeatherweightJavaScriptVisitor<? extends T>)visitor).visitFuncApp(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -471,7 +469,7 @@ public class FeatherweightJavaScriptParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(70);
+			setState(72);
 			switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 			case 1:
 				{
@@ -507,44 +505,53 @@ public class FeatherweightJavaScriptParser extends Parser {
 				break;
 			case 4:
 				{
-				_localctx = new VarRefContext(_localctx);
+				_localctx = new FuncAppContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(62); match(ID);
+				setState(63); args();
 				}
 				break;
 			case 5:
 				{
-				_localctx = new IntContext(_localctx);
+				_localctx = new VarRefContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(63); match(INT);
+				setState(64); match(ID);
 				}
 				break;
 			case 6:
 				{
-				_localctx = new BoolContext(_localctx);
+				_localctx = new IntContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(64); match(BOOL);
+				setState(65); match(INT);
 				}
 				break;
 			case 7:
 				{
-				_localctx = new NullContext(_localctx);
+				_localctx = new BoolContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(65); match(NULL);
+				setState(66); match(BOOL);
 				}
 				break;
 			case 8:
 				{
+				_localctx = new NullContext(_localctx);
+				_ctx = _localctx;
+				_prevctx = _localctx;
+				setState(67); match(NULL);
+				}
+				break;
+			case 9:
+				{
 				_localctx = new ParensContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(66); match(T__5);
-				setState(67); expr(0);
-				setState(68); match(T__4);
+				setState(68); match(T__5);
+				setState(69); expr(0);
+				setState(70); match(T__4);
 				}
 				break;
 			}
@@ -563,57 +570,48 @@ public class FeatherweightJavaScriptParser extends Parser {
 						{
 						_localctx = new MulDivModContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(72);
+						setState(74);
 						if (!(precpred(_ctx, 12))) throw new FailedPredicateException(this, "precpred(_ctx, 12)");
-						setState(73);
+						setState(75);
 						((MulDivModContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << MUL) | (1L << DIV) | (1L << MOD))) != 0)) ) {
 							((MulDivModContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						consume();
-						setState(74); expr(13);
+						setState(76); expr(13);
 						}
 						break;
 					case 2:
 						{
 						_localctx = new AddSubContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(75);
+						setState(77);
 						if (!(precpred(_ctx, 11))) throw new FailedPredicateException(this, "precpred(_ctx, 11)");
-						setState(76);
+						setState(78);
 						((AddSubContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==ADD || _la==SUB) ) {
 							((AddSubContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						consume();
-						setState(77); expr(12);
+						setState(79); expr(12);
 						}
 						break;
 					case 3:
 						{
 						_localctx = new CompareContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(78);
+						setState(80);
 						if (!(precpred(_ctx, 10))) throw new FailedPredicateException(this, "precpred(_ctx, 10)");
-						setState(79);
+						setState(81);
 						((CompareContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << GREATER) | (1L << LESS) | (1L << GREATEREQ) | (1L << LESSEQ) | (1L << EQUAL))) != 0)) ) {
 							((CompareContext)_localctx).op = (Token)_errHandler.recoverInline(this);
 						}
 						consume();
-						setState(80); expr(11);
-						}
-						break;
-					case 4:
-						{
-						_localctx = new FuncAppContext(new ExprContext(_parentctx, _parentState));
-						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(81);
-						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
-						setState(82); args();
+						setState(82); expr(11);
 						}
 						break;
 					}
@@ -866,7 +864,6 @@ public class FeatherweightJavaScriptParser extends Parser {
 		case 0: return precpred(_ctx, 12);
 		case 1: return precpred(_ctx, 11);
 		case 2: return precpred(_ctx, 10);
-		case 3: return precpred(_ctx, 8);
 		}
 		return true;
 	}
@@ -877,11 +874,11 @@ public class FeatherweightJavaScriptParser extends Parser {
 		"\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3"+
 		"\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3\60\n\3\3\3\5\3\63\n\3\3\4\3"+
 		"\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4"+
-		"\3\4\5\4I\n\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\7\4V\n\4\f\4"+
+		"\3\4\3\4\3\4\5\4K\n\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\7\4V\n\4\f\4"+
 		"\16\4Y\13\4\3\5\3\5\7\5]\n\5\f\5\16\5`\13\5\3\5\3\5\5\5d\n\5\3\6\3\6\3"+
 		"\6\3\6\7\6j\n\6\f\6\16\6m\13\6\5\6o\n\6\3\6\3\6\3\7\3\7\3\7\3\7\7\7w\n"+
 		"\7\f\7\16\7z\13\7\5\7|\n\7\3\7\3\7\3\7\2\3\6\b\2\4\6\b\n\f\2\5\4\2\22"+
-		"\23\26\26\3\2\24\25\3\2\27\33\u0091\2\17\3\2\2\2\4\62\3\2\2\2\6H\3\2\2"+
+		"\23\26\26\3\2\24\25\3\2\27\33\u0091\2\17\3\2\2\2\4\62\3\2\2\2\6J\3\2\2"+
 		"\2\bc\3\2\2\2\ne\3\2\2\2\fr\3\2\2\2\16\20\5\4\3\2\17\16\3\2\2\2\20\21"+
 		"\3\2\2\2\21\17\3\2\2\2\21\22\3\2\2\2\22\3\3\2\2\2\23\24\5\6\4\2\24\25"+
 		"\7\34\2\2\25\63\3\2\2\2\26\27\7\t\2\2\27\30\7\3\2\2\30\31\5\6\4\2\31\32"+
@@ -891,20 +888,20 @@ public class FeatherweightJavaScriptParser extends Parser {
 		"+,\7\3\2\2,-\5\6\4\2-/\7\4\2\2.\60\7\34\2\2/.\3\2\2\2/\60\3\2\2\2\60\63"+
 		"\3\2\2\2\61\63\7\34\2\2\62\23\3\2\2\2\62\26\3\2\2\2\62\36\3\2\2\2\62$"+
 		"\3\2\2\2\62*\3\2\2\2\62\61\3\2\2\2\63\5\3\2\2\2\64\65\b\4\1\2\65\66\7"+
-		"\r\2\2\66\67\7\35\2\2\678\7\b\2\28I\5\6\4\t9:\7\35\2\2:;\7\b\2\2;I\5\6"+
-		"\4\7<=\7\f\2\2=>\5\n\6\2>?\5\b\5\2?I\3\2\2\2@I\7\35\2\2AI\7\17\2\2BI\7"+
-		"\20\2\2CI\7\21\2\2DE\7\3\2\2EF\5\6\4\2FG\7\4\2\2GI\3\2\2\2H\64\3\2\2\2"+
-		"H9\3\2\2\2H<\3\2\2\2H@\3\2\2\2HA\3\2\2\2HB\3\2\2\2HC\3\2\2\2HD\3\2\2\2"+
-		"IW\3\2\2\2JK\f\16\2\2KL\t\2\2\2LV\5\6\4\17MN\f\r\2\2NO\t\3\2\2OV\5\6\4"+
-		"\16PQ\f\f\2\2QR\t\4\2\2RV\5\6\4\rST\f\n\2\2TV\5\f\7\2UJ\3\2\2\2UM\3\2"+
-		"\2\2UP\3\2\2\2US\3\2\2\2VY\3\2\2\2WU\3\2\2\2WX\3\2\2\2X\7\3\2\2\2YW\3"+
-		"\2\2\2Z^\7\5\2\2[]\5\4\3\2\\[\3\2\2\2]`\3\2\2\2^\\\3\2\2\2^_\3\2\2\2_"+
-		"a\3\2\2\2`^\3\2\2\2ad\7\7\2\2bd\5\4\3\2cZ\3\2\2\2cb\3\2\2\2d\t\3\2\2\2"+
-		"en\7\3\2\2fk\7\35\2\2gh\7\6\2\2hj\7\35\2\2ig\3\2\2\2jm\3\2\2\2ki\3\2\2"+
-		"\2kl\3\2\2\2lo\3\2\2\2mk\3\2\2\2nf\3\2\2\2no\3\2\2\2op\3\2\2\2pq\7\4\2"+
-		"\2q\13\3\2\2\2r{\7\3\2\2sx\5\6\4\2tu\7\6\2\2uw\5\6\4\2vt\3\2\2\2wz\3\2"+
-		"\2\2xv\3\2\2\2xy\3\2\2\2y|\3\2\2\2zx\3\2\2\2{s\3\2\2\2{|\3\2\2\2|}\3\2"+
-		"\2\2}~\7\4\2\2~\r\3\2\2\2\16\21/\62HUW^cknx{";
+		"\r\2\2\66\67\7\35\2\2\678\7\b\2\28K\5\6\4\t9:\7\35\2\2:;\7\b\2\2;K\5\6"+
+		"\4\7<=\7\f\2\2=>\5\n\6\2>?\5\b\5\2?K\3\2\2\2@A\7\35\2\2AK\5\f\7\2BK\7"+
+		"\35\2\2CK\7\17\2\2DK\7\20\2\2EK\7\21\2\2FG\7\3\2\2GH\5\6\4\2HI\7\4\2\2"+
+		"IK\3\2\2\2J\64\3\2\2\2J9\3\2\2\2J<\3\2\2\2J@\3\2\2\2JB\3\2\2\2JC\3\2\2"+
+		"\2JD\3\2\2\2JE\3\2\2\2JF\3\2\2\2KW\3\2\2\2LM\f\16\2\2MN\t\2\2\2NV\5\6"+
+		"\4\17OP\f\r\2\2PQ\t\3\2\2QV\5\6\4\16RS\f\f\2\2ST\t\4\2\2TV\5\6\4\rUL\3"+
+		"\2\2\2UO\3\2\2\2UR\3\2\2\2VY\3\2\2\2WU\3\2\2\2WX\3\2\2\2X\7\3\2\2\2YW"+
+		"\3\2\2\2Z^\7\5\2\2[]\5\4\3\2\\[\3\2\2\2]`\3\2\2\2^\\\3\2\2\2^_\3\2\2\2"+
+		"_a\3\2\2\2`^\3\2\2\2ad\7\7\2\2bd\5\4\3\2cZ\3\2\2\2cb\3\2\2\2d\t\3\2\2"+
+		"\2en\7\3\2\2fk\7\35\2\2gh\7\6\2\2hj\7\35\2\2ig\3\2\2\2jm\3\2\2\2ki\3\2"+
+		"\2\2kl\3\2\2\2lo\3\2\2\2mk\3\2\2\2nf\3\2\2\2no\3\2\2\2op\3\2\2\2pq\7\4"+
+		"\2\2q\13\3\2\2\2r{\7\3\2\2sx\5\6\4\2tu\7\6\2\2uw\5\6\4\2vt\3\2\2\2wz\3"+
+		"\2\2\2xv\3\2\2\2xy\3\2\2\2y|\3\2\2\2zx\3\2\2\2{s\3\2\2\2{|\3\2\2\2|}\3"+
+		"\2\2\2}~\7\4\2\2~\r\3\2\2\2\16\21/\62JUW^cknx{";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
