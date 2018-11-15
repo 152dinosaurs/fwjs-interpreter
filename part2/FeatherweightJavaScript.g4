@@ -15,7 +15,7 @@ PRINT	  : 'print' ; //added
 // Literals
 INT       : [1-9][0-9]* | '0' ;
 BOOL	  : 'true' | 'false' ; //added
-NULL	  : 'null' //added
+NULL	  : 'null' ; //added
 
 // Symbols
 MUL       : '*' ;
