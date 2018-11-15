@@ -48,8 +48,6 @@ prog: stat+ ;
 stat: expr SEPARATOR                                    # bareExpr
     | IF '(' expr ')' block ELSE block                  # ifThenElse
     | IF '(' expr ')' block                             # ifThen
-    | expr SEPARATOR //??
-    |
     | WHILE '(' expr ')' block                             # while
     | PRINT '(' expr ')' SEPARATOR?                     # print
     | SEPARATOR                                            # empty
