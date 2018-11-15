@@ -57,7 +57,7 @@ expr: expr op=( MUL | DIV | MOD ) expr                  # MulDivMod
     | expr op=( ADD | SUB ) expr                         # AddSub
     | expr op=( LESS | LESSEQ | GREATER | GREATEREQ | EQUAL ) expr             # Compare
     | FUNCTION params block                             # FuncDec
-    | expr args                                         # FuncApp
+    | ID args                                         # FuncApp
     | VAR ID '=' expr                                 # VarDec
     | ID                                                 # VarRef
     | ID '=' expr                                     # Assign
