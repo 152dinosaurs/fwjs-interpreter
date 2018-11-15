@@ -1,1 +1,1 @@
-(prog (stat (expr var   = (expr  0)) ;) (stat while   ( (expr 10) ) (block (stat (expr   {) <missing ';'>))) (stat (expr (expr    print) (args ( <missing ')'>)) ;) (stat (expr    = (expr (expr  ) + (expr  1))) ;) })
+(prog (stat (expr var i  = (expr  0)) ;) (stat (expr (expr while ) (args ( (expr (expr i) < (expr 10)) ))) <missing ';'>) (stat (expr   {) <missing ';'>) (stat (expr (expr   print) (args ( (expr i) ))) ;) (stat (expr   i  = (expr (expr  i ) + (expr  1))) ;) })
