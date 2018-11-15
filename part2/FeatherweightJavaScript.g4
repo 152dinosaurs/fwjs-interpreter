@@ -31,7 +31,7 @@ EQUAL	  : '==';
 SEPARATOR : ';' ;
 
 // Identifiers
-ID	      : [a-z | A-Z | '_'][a-z | A-Z | '_' | 0-9]* ; //added as identifier, not sure
+ID	      : [a-z|A-Z|'_'][a-z|A-Z|'_'| 0-9]*; //added as identifier, not sure
 
 // Whitespace and comments
 NEWLINE   : '\r'? '\n' -> skip ;
