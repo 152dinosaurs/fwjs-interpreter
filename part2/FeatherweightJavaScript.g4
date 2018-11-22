@@ -45,29 +45,6 @@ WS            : [ \t]+ -> skip ;
 /** The start rule */
 prog: stat+ ;
 
-<<<<<<< HEAD
-stat: expr SEPARATOR                                    # bareExpr
-    | IF '(' expr ')' block ELSE block                  # ifThenElse
-    | IF '(' expr ')' block                             # ifThen
-    | WHILE '(' expr ')' block                          # while
-    | PRINT '(' expr ')' SEPARATOR?                     # print
-    | SEPARATOR                                         # empty
-    ;
-
-expr: expr op=( MUL | DIV | MOD ) expr                  				# Mul Div Mod
-    | expr op=( ADD | SUB ) expr                         				# Add Sub
-    | expr op=( LESS | LESSEQ | GREATER | GREATEREQ | EQUAL ) expr      # Compare
-    | FUNCTION params block                             				# Function declaration
-    | ID args                                         					# Function application f(1,2)
-    | VAR ID '=' expr                                 					# variable declaration var x=3
-    | ID                                                 				# variable reference (x)
-    | ID '=' expr                                     					# assignment statement (x=4)
-    | INT                                               				# int
-    | BOOL                                                 				# bool
-    | NULL                                                 				# null
-    | '(' expr ')'                                      				# An expression in parenthesis
-
-=======
 stat: expr SEPARATOR                                       # bareExpr
     | IF '(' expr ')' block ELSE block                     # ifThenElse
     | IF '(' expr ')' block                                # ifThen
@@ -88,7 +65,6 @@ expr: expr op=( MUL | DIV | MOD ) expr                     # MulDivMod
     | BOOL                                                 # bool
     | NULL                                                 # null
     | '(' expr ')'                                         # parens
->>>>>>> 46c1569a1d9017cd90cd14e1011a3997038fd804
     ;
 
 block: '{' stat* '}'                                       # fullBlock
