@@ -7,7 +7,9 @@ import java.util.List;
  * FWJS expressions.
  */
 public interface Expression {
-    /**
+    int value = 0;
+
+	/**
      * Evaluate the expression in the context of the specified environment.
      */
     public Value evaluate(Environment env);
@@ -72,8 +74,44 @@ class BinOpExpr implements Expression {
 
     @SuppressWarnings("incomplete-switch")
     public Value evaluate(Environment env) {
-        // YOUR CODE HERE
-        return null;
+    	
+    	Value val1 = e1.evaluate(env);
+    	Value val2 = e2.evaluate(env);
+    	
+    	IntVal num1;
+    	IntVal num2;
+    	
+		if (val1 instanceof IntVal && val2 instanceof IntVal) {
+			num1 = (IntVal) val1;
+			num2 = (IntVal) val2;
+		} else {
+			return new NullVal();
+		}
+
+        if(op == op.ADD){
+        	return new IntVal (num1.toInt() + num2.toInt());     	
+		}else if (op == op.SUBTRACT){
+        	return new IntVal (num1.toInt() - num2.toInt());
+		}else if (op == op.MULTIPLY){
+			return new IntVal (num1.toInt() * num2.toInt());
+		}else if (op == op.DIVIDE){
+			return new IntVal (num1.toInt() / num2.toInt());
+		}else if (op == op.MOD){
+			return new IntVal (num1.toInt() % num2.toInt());
+		}else if (op == op.GT){
+			return new BoolVal (num1.toInt() > num2.toInt());
+		}else if (op == op.GE){
+			return new BoolVal (num1.toInt() >= num2.toInt());
+		}else if (op == op.LT){
+			return new BoolVal (num1.toInt() < num2.toInt());
+		}else if (op == op.LE){
+			return new BoolVal (num1.toInt() <= num2.toInt());
+		}else if (op == op.EQ){
+			return new BoolVal (num1.equals(num2));
+		}else{
+			return null;
+		}
+
     }
 }
 
@@ -91,8 +129,15 @@ class IfExpr implements Expression {
         this.els = els;
     }
     public Value evaluate(Environment env) {
-        // YOUR CODE HERE
-        return null;
+        
+    	BoolVal check = (BoolVal) cond.evaluate(env); 
+    	if (check.toBoolean())
+    	{
+    		return thn.evaluate(env);
+    	}else 
+    	{
+    		return els.evaluate(env);
+    	}
     }
 }
 
@@ -107,8 +152,19 @@ class WhileExpr implements Expression {
         this.body = body;
     }
     public Value evaluate(Environment env) {
-        // YOUR CODE HERE
-        return null;
+    	
+    	BoolVal check = (BoolVal) cond.evaluate(env);
+    	Value result = new NullVal();
+    	BoolVal dummyTrue = new BoolVal(true);
+    	
+    	while (check.equals(dummyTrue))
+    	{
+    		result = body.evaluate(env);
+    		check = ((BoolVal) cond.evaluate(env));
+ 
+    	}
+    	
+    	return result;
     }
 }
 
@@ -123,8 +179,14 @@ class SeqExpr implements Expression {
         this.e2 = e2;
     }
     public Value evaluate(Environment env) {
-        // YOUR CODE HERE
-        return null;
+        e1.evaluate(env);
+        Value v2 = e2.evaluate(env); 
+        return v2; //because of implicit return
+        /*
+         * TODO: Verify that this actually works.
+         * The relevant JUnit test depends on AssignExpr and BinOpExpr, 
+         * so I can't verify if this does anything meaningful yet.
+         */
     }
 }
 
@@ -139,8 +201,9 @@ class VarDeclExpr implements Expression {
         this.exp = exp;
     }
     public Value evaluate(Environment env) {
-        // YOUR CODE HERE
-        return null;
+        Value v = exp.evaluate(env);
+        env.createVar(varName, v);
+        return v;
     }
 }
 
@@ -157,8 +220,15 @@ class AssignExpr implements Expression {
         this.e = e;
     }
     public Value evaluate(Environment env) {
-        // YOUR CODE HERE
-        return null;
+    	Value v = e.evaluate(env);
+    	
+    	/*
+    	 * due to the implementation of updateVar, this will do the
+    	 * right thing regardless if the variable has been set already.
+    	 * See comment on Environment.updateVar() for more info.
+    	 */
+        env.updateVar(varName, v);
+        return v;
     }
 }
 
@@ -173,8 +243,9 @@ class FunctionDeclExpr implements Expression {
         this.body = body;
     }
     public Value evaluate(Environment env) {
-        // YOUR CODE HERE
-        return null;
+    	body.evaluate(env);
+        ClosureVal closure = new ClosureVal(params, body, env);
+        return closure;
     }
 }
 
@@ -188,9 +259,17 @@ class FunctionAppExpr implements Expression {
         this.f = f;
         this.args = args;
     }
-    public Value evaluate(Environment env) {
-        // YOUR CODE HERE
-        return null;
+    public Value evaluate(Environment env) 
+    {
+        Environment newEnv = new Environment(env);
+        ClosureVal want = (ClosureVal)f.evaluate(newEnv);
+        
+        List <Value> evalTo = new ArrayList <Value>();
+        for (int i = 0; i < args.size(); i++)
+        {
+        	evalTo.add(args.get(i).evaluate(env));
+        }
+        
+        return want.apply(evalTo);
     }
 }
-

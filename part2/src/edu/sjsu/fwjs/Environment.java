@@ -27,8 +27,15 @@ public class Environment {
      * null is returned (similar to how JS returns undefined.
      */
     public Value resolveVar(String varName) {
-        // YOUR CODE HERE
-        return null;
+		if (env.containsKey(varName))
+			return env.get(varName);
+		else {
+			if (outerEnv == null) {
+				return new NullVal();
+			} else {
+				return outerEnv.resolveVar(varName);
+			}
+		}
     }
 
     /**
@@ -36,16 +43,44 @@ public class Environment {
      * If a variable has not been defined previously in the current scope,
      * or any of the function's outer scopes, the var is stored in the global scope.
      */
-    public void updateVar(String key, Value v) {
-        // YOUR CODE HERE
-    }
+	public void updateVar(String key, Value v) {
+		Value oldVal = this.resolveVar(key);
+
+		// if the oldVal is null, then variable has not been defined in any scope
+		if (new NullVal().equals(oldVal)) {
+			Environment e = this;
+			// loop until e becomes the global scope
+			while (e.outerEnv != null) {
+				e = e.outerEnv;
+			}
+			e.createVar(key, v);
+		} else
+			updateEnvValue(key, v);
+	}
+	
+	/**
+	 * Helper function for updateVar which updates a value in the environment.
+	 * This function assumes that a variable with varName already exists in
+	 * one of the environments.
+	 * @param varName the variable name to search for in the environments
+	 * @param newVal the new value for the variable
+	 */
+	private void updateEnvValue(String varName, Value newVal) {
+		if (env.containsKey(varName))
+			env.put(varName, newVal);
+		else
+			outerEnv.updateEnvValue(varName, newVal);
+	}
 
     /**
      * Creates a new variable in the local scope.
      * If the variable has been defined in the current scope previously,
      * a RuntimeException is thrown.
      */
-    public void createVar(String key, Value v) {
-        // YOUR CODE HERE
-    }
+	public void createVar(String key, Value v) {
+		if (env.containsKey(key))
+			throw new RuntimeException("Variable already defined in current scope");
+		else
+			env.put(key, v);
+	}
 }
