@@ -5,6 +5,7 @@ import java.util.List;
 
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptBaseVisitor;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser;
+import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.BoolContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.PrintContext;
 
 public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor<Expression>{
@@ -48,6 +49,12 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
     public Expression visitInt(FeatherweightJavaScriptParser.IntContext ctx) {
         int val = Integer.valueOf(ctx.INT().getText());
         return new ValueExpr(new IntVal(val));
+    }
+    
+    @Override
+    public Expression visitBool(BoolContext ctx) {
+    	boolean val = Boolean.valueOf(ctx.BOOL().getText());
+    	return new ValueExpr(new BoolVal(val));
     }
 
     @Override
