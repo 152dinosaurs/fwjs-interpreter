@@ -3,6 +3,8 @@ package edu.sjsu.fwjs;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.antlr.v4.runtime.misc.NotNull;
+
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptBaseVisitor;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.AddSubContext;
@@ -10,12 +12,14 @@ import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.ArgsContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.AssignContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.BoolContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.CompareContext;
+import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.EmptyContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.ExprContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.FuncAppContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.FuncDecContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.MulDivModContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.NullContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.PrintContext;
+import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.WhileContext;
 
 public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor<Expression>{
     @Override
@@ -46,6 +50,7 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
         Expression els = visit(ctx.block(1));
         return new IfExpr(cond, thn, els);
     }
+    
 
     @Override
     public Expression visitIfThen(FeatherweightJavaScriptParser.IfThenContext ctx) {
@@ -82,6 +87,14 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
     	Expression e2 = visit(ctx.expr(1));
     	return new BinOpExpr(operator, e1, e2);
     }
+    
+    @Override
+    public Expression visitWhile(WhileContext ctx) {
+        Expression cond = visit(ctx.expr());
+        Expression body = visit(ctx.block());
+    	return new WhileExpr(cond, body);
+    }
+
     
     @Override
     public Expression visitNull(NullContext ctx) {
