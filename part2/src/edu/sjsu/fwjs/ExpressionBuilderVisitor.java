@@ -9,6 +9,7 @@ import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.AddSubContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.ArgsContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.AssignContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.BoolContext;
+import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.ExprContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.FuncAppContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.FuncDecContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.MulDivModContext;
@@ -54,8 +55,9 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
 
     @Override
     public Expression visitFuncApp(FuncAppContext ctx) {
-    	// TODO Auto-generated method stub
-    	return super.visitFuncApp(ctx);
+    	Expression func = null;
+    	// TODO: fix this
+    	return new FunctionAppExpr(func, getArgList(ctx.args()));
     }
     
     @Override
@@ -87,6 +89,19 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
     public Expression visitArgs(ArgsContext ctx) {
     	// TODO Auto-generated method stub
     	return super.visitArgs(ctx);
+    }
+    
+    /**
+     * Helper function to get a List of expressions from an ArgsContext.
+     * @param ctx the args context
+     * @return a List of expressions
+     */
+    public List<Expression> getArgList(ArgsContext ctx){
+    	List<Expression> result = new ArrayList<>();
+    	for(ExprContext thisExpr : ctx.expr()) {
+    		result.add(visit(thisExpr));
+    	}
+    	return result;
     }
     
     @Override
