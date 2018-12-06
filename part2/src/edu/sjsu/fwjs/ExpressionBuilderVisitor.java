@@ -16,6 +16,8 @@ import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.FuncDecContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.MulDivModContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.NullContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.PrintContext;
+import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.VarDecContext;
+import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.VarRefContext;
 
 public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor<Expression>{
     @Override
@@ -73,6 +75,18 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
     	Expression e1 = visit(ctx.expr(0));
     	Expression e2 = visit(ctx.expr(1));
     	return new BinOpExpr(operator, e1, e2);
+    }
+    
+    @Override
+    public Expression visitVarRef(VarRefContext ctx) {
+    	return new VarExpr(ctx.ID().getText());
+    }
+    
+    @Override
+    public Expression visitVarDec(VarDecContext ctx) {
+    	String varName = ctx.ID().getText();
+    	Expression exp = visit(ctx.expr());
+    	return new VarDeclExpr(varName, exp);
     }
     
     @Override
