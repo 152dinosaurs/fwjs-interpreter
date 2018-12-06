@@ -69,25 +69,18 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
     
     @Override
     public Expression visitAddSub(AddSubContext ctx) {
-        Op oper; 
-    	Expression num1 = visit(ctx.expr(0));
-        Expression num2 = visit(ctx.expr(1));
-        
-        if (ctx.op == ctx.ADD())
-        {
-        	oper = Op.ADD;
-        }
-        else
-        {
-        	oper = Op.SUBTRACT;
-        }
-        return new BinOpExpr(oper, num1, num2);
+    	Op operator = getOp(ctx.op.getText());
+    	Expression e1 = visit(ctx.expr(0));
+    	Expression e2 = visit(ctx.expr(1));
+    	return new BinOpExpr(operator, e1, e2);
     }
     
     @Override
     public Expression visitMulDivMod(MulDivModContext ctx) {
-    	// TODO Auto-generated method stub
-    	return super.visitMulDivMod(ctx);
+    	Op operator = getOp(ctx.op.getText());
+    	Expression e1 = visit(ctx.expr(0));
+    	Expression e2 = visit(ctx.expr(1));
+    	return new BinOpExpr(operator, e1, e2);
     }
     
     @Override
