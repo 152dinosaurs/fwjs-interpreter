@@ -104,6 +104,14 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
     }
     
     @Override
+    public Expression visitCompare(CompareContext ctx) {
+    	Op operator = getOp(ctx.op.getText());
+    	Expression e1 = visit(ctx.expr(0));
+    	Expression e2 = visit(ctx.expr(1));
+    	return new BinOpExpr(operator, e1, e2);
+    }
+    
+    @Override
     public Expression visitAssign(AssignContext ctx) {
     	// TODO Auto-generated method stub
     	return super.visitAssign(ctx);
