@@ -68,8 +68,10 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
     
     @Override
     public Expression visitFuncDec(FuncDecContext ctx) {
-    	// TODO Auto-generated method stub
-    	return super.visitFuncDec(ctx);
+    	List<String> params = new ArrayList<String>();
+    	params.add(ctx.FUNCTION().toString());
+        Expression body = visit(ctx.block());
+    	return new FunctionDeclExpr(params, body);
     }
     
     @Override
