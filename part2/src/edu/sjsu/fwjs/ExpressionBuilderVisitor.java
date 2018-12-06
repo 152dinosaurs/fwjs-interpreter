@@ -92,7 +92,7 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
     
     @Override
     public Expression visitNull(NullContext ctx) {
-       	return new ValueExpr(null);
+       	return new ValueExpr(new NullVal());
     }
     
     // NOT SURE if we have to do this one or not??? -Micah
