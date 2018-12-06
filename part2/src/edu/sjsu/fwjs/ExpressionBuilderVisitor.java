@@ -9,6 +9,7 @@ import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.AddSubContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.ArgsContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.AssignContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.BoolContext;
+import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.CompareContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.ExprContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.FuncAppContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.FuncDecContext;
