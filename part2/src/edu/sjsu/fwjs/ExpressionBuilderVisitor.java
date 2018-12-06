@@ -3,8 +3,6 @@ package edu.sjsu.fwjs;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.antlr.v4.runtime.tree.TerminalNode;
-
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptBaseVisitor;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.AddSubContext;
@@ -68,20 +66,8 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
     
     @Override
     public Expression visitAddSub(AddSubContext ctx) {
-    	Op oper;
-        Expression num1 = visit(ctx.expr(0));
-        Expression num2 = visit(ctx.expr(0));
-        
-        //not sure on this equals thing
-        if (ctx == ctx.ADD())
-        {
-        	oper = Op.ADD;
-        }
-        else
-        {
-        	oper = Op.SUBTRACT;
-        }
-        return new BinOpExpr(oper,num1,num2);
+    	// TODO Auto-generated method stub
+    	return super.visitAddSub(ctx);
     }
     
     @Override
@@ -92,7 +78,7 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
     
     @Override
     public Expression visitNull(NullContext ctx) {
-    	return new ValueExpr(null);
+       	return new ValueExpr(null);
     }
     
     // NOT SURE if we have to do this one or not??? -Micah
@@ -112,7 +98,7 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
 
     @Override
     public Expression visitInt(FeatherweightJavaScriptParser.IntContext ctx) {
-    	int val = Integer.valueOf(ctx.INT().getText());
+        int val = Integer.valueOf(ctx.INT().getText());
         return new ValueExpr(new IntVal(val));
     }
     
