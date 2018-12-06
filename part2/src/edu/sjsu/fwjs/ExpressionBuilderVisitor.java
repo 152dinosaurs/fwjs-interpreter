@@ -12,7 +12,6 @@ import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.ArgsContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.AssignContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.BoolContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.CompareContext;
-import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.EmptyContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.ExprContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.FuncAppContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.FuncDecContext;
@@ -53,7 +52,6 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
         return new IfExpr(cond, thn, els);
     }
     
-
     @Override
     public Expression visitIfThen(FeatherweightJavaScriptParser.IfThenContext ctx) {
         Expression cond = visit(ctx.expr());
@@ -110,7 +108,6 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
         Expression body = visit(ctx.block());
     	return new WhileExpr(cond, body);
     }
-
     
     @Override
     public Expression visitNull(NullContext ctx) {
@@ -152,8 +149,6 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
     	return new AssignExpr(name, val);
     }
     
-    // TODO: there MIGHT be more visits we have to do. -Micah
-
     @Override
     public Expression visitInt(FeatherweightJavaScriptParser.IntContext ctx) {
         int val = Integer.valueOf(ctx.INT().getText());
