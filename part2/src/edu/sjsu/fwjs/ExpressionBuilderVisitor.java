@@ -150,6 +150,44 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
         }
         return exp;
     }
+    
+    private Op getOp(String opString) {
+    	Op op = null;
+    	switch (opString) {
+		case "==":
+			op = Op.EQ;
+			break;
+    	case "+":
+    		op = Op.ADD;
+    		break;
+    	case "-":
+    		op = Op.SUBTRACT;
+    		break;
+    	case "/":
+    		op = Op.DIVIDE;
+    		break;
+    	case "*":
+    		op = Op.MULTIPLY;
+    		break;
+    	case "%":
+    		op = Op.MOD;
+    		break;
+    	case ">=":
+    		op = Op.GE;
+    		break;
+    	case ">":
+    		op = Op.GT;
+    		break;
+    	case "<=":
+    		op = Op.LE;
+    		break;
+    	case "<":
+    		op = Op.LT;
+    		break;
+    		
+    }
+    	return op;
+    }
 
     @Override
     public Expression visitSimpBlock(FeatherweightJavaScriptParser.SimpBlockContext ctx) {
