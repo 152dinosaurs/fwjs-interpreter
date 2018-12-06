@@ -5,7 +5,14 @@ import java.util.List;
 
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptBaseVisitor;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser;
+import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.AddSubContext;
+import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.ArgsContext;
+import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.AssignContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.BoolContext;
+import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.FuncAppContext;
+import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.FuncDecContext;
+import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.MulDivModContext;
+import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.NullContext;
 import edu.sjsu.fwjs.parser.FeatherweightJavaScriptParser.PrintContext;
 
 public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor<Expression>{
@@ -44,6 +51,51 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
         Expression thn = visit(ctx.block());
         return new IfExpr(cond, thn, null);
     }
+
+    @Override
+    public Expression visitFuncApp(FuncAppContext ctx) {
+    	// TODO Auto-generated method stub
+    	return super.visitFuncApp(ctx);
+    }
+    
+    @Override
+    public Expression visitFuncDec(FuncDecContext ctx) {
+    	// TODO Auto-generated method stub
+    	return super.visitFuncDec(ctx);
+    }
+    
+    @Override
+    public Expression visitAddSub(AddSubContext ctx) {
+    	// TODO Auto-generated method stub
+    	return super.visitAddSub(ctx);
+    }
+    
+    @Override
+    public Expression visitMulDivMod(MulDivModContext ctx) {
+    	// TODO Auto-generated method stub
+    	return super.visitMulDivMod(ctx);
+    }
+    
+    @Override
+    public Expression visitNull(NullContext ctx) {
+    	// TODO Auto-generated method stub
+    	return super.visitNull(ctx);
+    }
+    
+    // NOT SURE if we have to do this one or not??? -Micah
+    @Override
+    public Expression visitArgs(ArgsContext ctx) {
+    	// TODO Auto-generated method stub
+    	return super.visitArgs(ctx);
+    }
+    
+    @Override
+    public Expression visitAssign(AssignContext ctx) {
+    	// TODO Auto-generated method stub
+    	return super.visitAssign(ctx);
+    }
+    
+    // TODO: there MIGHT be more visits we have to do. -Micah
 
     @Override
     public Expression visitInt(FeatherweightJavaScriptParser.IntContext ctx) {
