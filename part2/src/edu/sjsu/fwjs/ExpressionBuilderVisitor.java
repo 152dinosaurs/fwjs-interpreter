@@ -97,7 +97,7 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
     // NOT SURE if we have to do this one or not??? -Micah
     @Override
     public Expression visitArgs(ArgsContext ctx) {
-    	// TODO Auto-generated method stub
+    	
     	return super.visitArgs(ctx);
     }
     
@@ -116,8 +116,9 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
     
     @Override
     public Expression visitAssign(AssignContext ctx) {
-    	// TODO Auto-generated method stub
-    	return super.visitAssign(ctx);
+    	String name = ctx.ID().toString();
+    	Expression val = visit(ctx.expr());
+    	return new AssignExpr(name, val);
     }
     
     // TODO: there MIGHT be more visits we have to do. -Micah
