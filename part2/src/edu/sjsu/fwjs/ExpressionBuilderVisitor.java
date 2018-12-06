@@ -80,8 +80,7 @@ public class ExpressionBuilderVisitor extends FeatherweightJavaScriptBaseVisitor
     
     @Override
     public Expression visitNull(NullContext ctx) {
-    	// TODO Auto-generated method stub
-    	return super.visitNull(ctx);
+       	return new ValueExpr(null);
     }
     
     // NOT SURE if we have to do this one or not??? -Micah
